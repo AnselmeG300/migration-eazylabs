@@ -21,6 +21,53 @@ Before starting, ensure that you:
 
 ---
 
+## Infrastructure Overview
+
+This project deploys a complete AWS infrastructure using Terraform, consisting of the following components:
+
+### Network Infrastructure
+- **VPC**: Custom Virtual Private Cloud with DNS support
+- **Subnets**: Public and private subnets across multiple availability zones
+- **Security Groups**: Configured to allow HTTP/HTTPS traffic to the ALB and SSH access to EC2 instances
+
+### Compute Resources
+- **Launch Template**: Defines EC2 instance configuration with custom AMI
+- **Auto Scaling Group (ASG)**: Automatically manages EC2 instance scaling based on demand
+- **AMI**: Custom Amazon Machine Image with pre-configured EazyLabs environment
+
+### Load Balancing
+- **Application Load Balancer (ALB)**: Distributes incoming traffic across EC2 instances
+- **Target Groups**: Routes traffic to healthy instances
+- **Listeners**: HTTP (port 80) and HTTPS (port 443) listeners with SSL certificates
+
+### Security & Certificates
+- **SSL Certificates**: Configured for `*.labs.your_domain` and `*.direct.docker.labs.your_domain`
+- **IAM Roles**: Permissions for EC2 instances to interact with AWS services
+- **Key Pairs**: SSH key pairs for secure instance access
+
+### Monitoring & Automation
+- **CloudWatch**: Monitoring and logging for infrastructure health
+- **EventBridge**: Scheduled rules for automated tasks
+- **Lambda Functions**: Serverless functions for infrastructure automation
+
+### Terraform Configuration Files
+- **provider.tf**: AWS provider configuration for eu-west-1 region
+- **vpc.tf**: VPC and networking setup
+- **subnets.tf**: Subnet configuration
+- **sg.tf**: Security group rules
+- **alb.tf**: Application Load Balancer configuration
+- **asg.tf**: Auto Scaling Group settings
+- **launch_template.tf**: EC2 launch template
+- **certificats.tf**: SSL certificate configuration
+- **lambda.tf**: Lambda function definitions
+- **cloudwatch.tf**: CloudWatch alarms and metrics
+- **event_bridge.tf**: EventBridge rules and targets
+- **role.tf**: IAM roles and policies
+- **locals.tf**: Local variables
+- **terraform.tfvars**: Variable values (customize for your environment)
+
+---
+
 ## Migration Steps
 
 ### 1. Create an AMI with Your Domain Name
