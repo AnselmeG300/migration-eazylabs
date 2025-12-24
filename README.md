@@ -23,7 +23,7 @@ Before starting, ensure that you:
 
 ## Infrastructure Overview
 
-![EAZYLabs Infrastructure Diagram](EAZYLabs.png)
+![EAZYLabs Infrastructure Diagram](EAZYLabs%20ARCHI.png)
 
 This project deploys a complete AWS infrastructure using Terraform, consisting of the following components:
 
