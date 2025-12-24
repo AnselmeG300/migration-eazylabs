@@ -1,0 +1,31 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.bak
+
+# .terraform directory - this contains provider plugins and modules
+.terraform/
+
+# Crash log files
+crash.log
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Plugin cache directory
+.terraform.lock.hcl
+
+# Sensitive output files
+*.tfplan
+*.tfplan.*
+
+# IDE files (optional, based on your development environment)
+.vscode/
+.idea/
+*.swp
+*.swo
