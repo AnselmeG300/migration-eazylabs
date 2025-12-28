@@ -8,6 +8,11 @@ EazyLabs is an EazyTraining platform that allows learners to perform hands-on la
 
 The goal of this migration is to move the existing EazyLabs infrastructure to AWS's Ireland region by creating a custom AMI image, generating SSL certificates for security, and configuring the necessary DNS records to ensure seamless access to the application.
 
+This migration is driven by two key objectives:
+
+1. **Cost Optimization**: By leveraging more cost-effective AWS services, this migration significantly reduces infrastructure expenses.
+2. **Infrastructure Centralization**: This migration aligns with the broader EazyTraining application strategy of consolidating all EazyTraining applications within a single VPC, eliminating inter-application data transfer charges and improving overall network efficiency.
+
 ---
 
 ## Prerequisites
